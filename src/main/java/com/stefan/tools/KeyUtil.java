@@ -48,21 +48,17 @@ public class KeyUtil {
     }
 
     // https://docs.oracle.com/javase/8/docs/api/java/security/spec/PKCS8EncodedKeySpec.html
-    private static PrivateKey createRSAPrivateKey(String privateKey) throws Exception {
+    static PrivateKey createRSAPrivateKey(String privateKey) throws Exception {
         byte[] privateKeyBytes = Base64.getDecoder().decode(privateKey);
         PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(privateKeyBytes);
         return KeyFactory.getInstance("RSA").generatePrivate(spec);
     }
 
     // https://docs.oracle.com/javase/8/docs/api/java/security/spec/X509EncodedKeySpec.html
-    private static PublicKey createRSAPublicKey(String publicKey) throws Exception {
+    static PublicKey createRSAPublicKey(String publicKey) throws Exception {
         byte[] publicKeyBytes = Base64.getDecoder().decode(publicKey);
         X509EncodedKeySpec spec = new X509EncodedKeySpec(publicKeyBytes);
         return KeyFactory.getInstance("RSA").generatePublic(spec);
     }
-
-
-
-
 
 }

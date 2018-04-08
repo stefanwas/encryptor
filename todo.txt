@@ -1,3 +1,4 @@
 1. check if it's possible to switch keys - DONE and it works
-2. finish symmetric encryption
+2. finish symmetric encryption DONE
+3. command line runner
 
